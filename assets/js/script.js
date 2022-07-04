@@ -24,9 +24,32 @@
 var questionEl = []
 var answerOptionsEl = []
 var answersCorrectEl = []
-var userAnswersEl = []
-var timerEl = ()
-var startButtonEl = $('button-start');
+let timer = 60
+// add timer 
+var startButtonEl = $('#q1');
+console.log(startButtonEl)
+var children=startButtonEl.children()
+children.on("click",function(event){
+    console.log("check")
+    console.log(event.target.textContent)
+    const userAnswer=event.target.textContent
+    if (isCorrect(userAnswer, 0)) {
+   // if correct add to score
+    }
+   else {
+        // if incorrect subtract time
+   }
 
+ 
+})
+function tick () {
+    timer-=1
+    console.log(timer)
 
+}
+const isCorrect = (answer, index) => {
+    var answersArr = ["CAPRI-SUN Pacific Cooler","DON'T PANIC","Nah, we ball.","NO CHAIR","Click to ASCEND"]
+   return answersArr [index] === answer
+}
+let interval = setInterval(tick, 1000)
 // var test = document.getElementById("button-start");
